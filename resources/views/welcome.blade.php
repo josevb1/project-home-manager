@@ -82,7 +82,7 @@
        
        <div class="links">
            @if (Auth::check())
-               <a href="{{ url('/home') }}">Dashboard</a>
+               <a href="{{ url('/home')}}">Dashboard</a>
            @else
 
                To manage your home here 

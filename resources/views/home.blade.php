@@ -3,16 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8 colo-md-offset-2 shadow p-4">
             <div class="card">
-                <div class="card-header">User Profile</div>
+                <div class="card-header">Welcome {{ucwords(Auth::user()->name)}} {{ucwords(Auth::user()->last_name)}}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                <img src="../img/chico.png" width="80px" height="80px" />
+                <a href="#">change Image</a>
 
         <div id="root">
 

@@ -19,6 +19,7 @@
                                     <tr>
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
+                                       <th scope="col">id</th>
                                     <th scope="col">Actions</th>
 
                                     
@@ -30,7 +31,10 @@
                                     <tr v-for="user in filter.slice(0, 2)" :key="user.id">
                                         <th>{{ user.name }}</th>
                                         <th>{{ user.email }}</th>
-                                        <th><a href="#" class="btn btn-primary btn-sm"> Send Friend Request </a></th>
+                                         <th>{{ user.id }}</th>
+
+                                        <th><a href="/addfriend" class="btn btn-success btn-sm"> Send Friend Request </a></th>
+                                        
                                         <th><a href="#" class="btn btn-primary btn-sm"> Send Message </a></th>
             
                                     </tr>
@@ -46,15 +50,21 @@
 
 <script>
     export default {
+
+    
+
         mounted() {
             console.log('Component mounted.')
         
         },
 
         data() {
+
+          
             return {
                 users: [],
                 search: ''
+                
             }
         },
         created() {

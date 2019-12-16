@@ -10,6 +10,25 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
+
+                        <div class="form-group row {{ $errors->has('gender') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Gender</label>
+
+                            <div class="col-md-6">
+                               <select name="gender"  class="form-control">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+
+                               </select>
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
                         <div class="form-group row {{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 col-form-label text-md-right">First Name</label>
 
@@ -38,7 +57,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        
 
                         <div class="form-group row {{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
@@ -80,13 +99,18 @@
                             <label for="birth" class="col-md-4 col-form-label text-md-right">Date of Birth</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="birth" value="{{ old('birth') }}"required>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('birth') }}</strong>
-                                    </span>
-                                @endif
+                               
+                                <div class="well">
+                
+                                    <input type="date" name="birth" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+                                  
+                                
+                                        @if ($errors->has('name'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('birth') }}</strong>
+                                            </span>
+                                        @endif
+                                </div>
                             </div>
                         </div>
 
@@ -113,12 +137,7 @@
                             </div>
                         </div>
 
-                        <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i> Register with Google
-                </a>
-                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                </a> -->
+
             
              
 

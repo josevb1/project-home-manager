@@ -15,10 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/network', 'IndexController@index')->name('network');
+Route::get('/friends', 'IndexController@friends')->name('friends');
+Route::get('/addfriend/{id}', 'IndexController@sendRequest' );
 
 
 Route::resource('/groups', 'GroupController');

@@ -37,8 +37,8 @@
                 @endif
                 @else
 
-                <a role="button" class="btn btn-outline-primary btn-md mx-1" href="/home">
-                 Dashboard
+                <a role="button" class="btn btn-outline-primary btn-md mx-1" href="{{ url('/home')}}">
+                 Profile
                 </a>
                 <a href="{{route('groups.create')}}" class="btn btn-outline-primary btn-md mx-1" role="button">Manage</a>
                 <a href="{{route('network')}}" class="btn btn-outline-primary btn-md mx-1" role="button">My Network</a>
@@ -81,7 +81,7 @@
                             
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fas fa-user-tie"></i> {{ Auth::user()->name }}  {{ Auth::user()->last_name }} <span class="caret"></span>
+                                <i class="fas fa-user-tie"></i> {{ ucwords(Auth::user()->name) }}  {{ ucwords(Auth::user()->last_name)   }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

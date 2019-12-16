@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use DB;
+
 
 class IndexController extends Controller
 {
@@ -24,5 +27,20 @@ class IndexController extends Controller
     public function index()
     {
         return view('index');
+    }
+
+    public function friends() {
+
+        $userId = Auth::user()->id;
+        $allUsers = DB::table('users')->where('id', '!=', $userId)->get();
+    
+       return $allUsers;
+    }
+
+    public function sendRequest($id) {
+
+
+        return Auth::user()->addfriend($id);
+        
     }
 }

@@ -20,14 +20,33 @@ class UsersTableSeeder extends Seeder
 
         $admin = User::create([
             'name' => 'admin',
-            'email' => 'josevb1@gmail.com',
-            'password' => bcrypt('admin')
+            'last_name' => 'admin',
+            'gender' => 'male',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('admin'),
+            'birth' => '12/11/2018',
+            'number' => '5465216',
+           
         ]);
 
         $user = User::create([
-            'name' => 'user',
-            'email' => 'coste93a@gmail.com',
-            'password' => bcrypt('user')
+            'name' => 'user1',
+            'last_name' => 'user1',
+            'gender' => 'female',
+            'email' => 'user1@gmail.com',
+            'password' => bcrypt('user1'),
+            'birth' => '12/11/2018',
+            'number' => '54564561',
+        ]);
+
+        $user = User::create([
+            'name' => 'user2',
+            'last_name' => 'user2',
+            'gender' => 'male',
+            'email' => 'user2@gmail.com',
+            'password' => bcrypt('user2'),
+            'birth' => '12/11/2018',
+            'number' => '2115454',
         ]);
 
         $admin->roles()->attach($adminRole);

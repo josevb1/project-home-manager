@@ -21,7 +21,6 @@ class CreateGroupsTable extends Migration
             $table->string('image')->nullable();
             $table->integer('created_by_id')->nullable();
             $table->integer('owner_id')->nullable();
-            // $table->string('owner_type');
             $table->integer('admins')->nullable();
             $table->integer('members')->nullable();
             $table->integer('client_id')->nullable();
@@ -43,6 +42,6 @@ class CreateGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groups');
+        Schema::dropIfExists('group');
     }
 }
